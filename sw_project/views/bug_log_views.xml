@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_project_bug_log_action" model="ir.actions.act_window">
+            <field name="name">Bug Log</field>
+            <field name="res_model">project.bug.log</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_filter_active': 1}</field>
+            <field name="help"
+                   type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Add a Bug Log
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_bug_log_view_form">
+            <field name="name">project.bug.log.view.form</field>
+            <field name="model">project.bug.log</field>
+            <field name="arch" type="xml">
+                <form string="Bug Log">
+                    <group>
+                        <field name="project_id"/>
+                        <field name="log_type"/>
+                        <field name="description" required="1" widget="html"/>
+                        <field name="logged_by"/>
+                        <field name="logged_on"/>
+                        <field name="log_source"/>
+                        <field name="related_task_id" domain="[('project_id', '=', project_id)]"/>
+                        <field name="related_meeting"/>
+                        <field name="git_commit_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="project_bug_log_view_tree"
+                model="ir.ui.view">
+            <field name="name">project.bug.log.view.tree</field>
+            <field name="model">project.bug.log</field>
+            <field name="arch"
+                   type="xml">
+                <tree string="Bug Log" editable="top">
+                    <field name="project_id"/>
+                    <field name="log_type"/>
+                    <field name="description" required="1" widget="html"/>
+                    <field name="logged_by"/>
+                    <field name="logged_on"/>
+                    <field name="log_source"/>
+                    <field name="related_task_id" domain="[('project_id', '=', project_id)]"/>
+                    <field name="related_meeting"/>
+                    <field name="git_commit_id"/>
+                    <button name="action_bug_log_form_view" type="object" string="Check Out">
+                    </button>
+                    <button name="action_new_task_view" type="object" string="New Task">
+                    </button>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+

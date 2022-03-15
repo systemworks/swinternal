@@ -1,0 +1,23 @@
+{
+    "name": "SystemWorks: Project customizations",
+    "summary": "Customizations for Project",
+    "category": "Customizations",
+    "version": "15.0.1.0.0",
+    "sequence": 1,
+    "author": "SystemWorks, Alexander Zimmermann",
+    "license": "OPL-1",
+    "depends": ['project', 'hr_timesheet'],
+    "data": [
+        'views/task_log_views.xml',
+        'views/bug_log_views.xml',
+        'views/functional_area_views.xml',
+        'views/related_module_views.xml',
+        'views/menus.xml',
+        'views/project_views.xml',
+        'security/ir.model.access.csv',
+    ],
+    "demo": [],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+}

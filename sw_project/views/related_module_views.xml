@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_project_related_module_action" model="ir.actions.act_window">
+            <field name="name">project.related.module</field>
+            <field name="res_model">project.odoo.module</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_filter_active': 1}</field>
+            <field name="help"
+                   type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Add an Module
+                </p>
+            </field>
+        </record>
+        <record id="project_related_module_view_tree"
+                model="ir.ui.view">
+            <field name="name">project.related.module.view.tree</field>
+            <field name="model">project.odoo.module</field>
+            <field name="arch"
+                   type="xml">
+                <tree string="Related Module">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+
